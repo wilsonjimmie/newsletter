@@ -20,8 +20,8 @@ Route::group(['prefix' => 'subscriber'], function() {
     Route::get('/{list_id}', 'SubscriberController@index');
     Route::post('/add', 'SubscriberController@store');
     //Route::put('/update', 'SubscriberController@update');
-    Route::get('/find/{list_id}/{email}', 'SubscriberController@show');
-    Route::get('/delete/{list_id}/{email}', 'SubscriberController@destroy');
+    Route::get('/{list_id}/find/{email}', 'SubscriberController@show');
+    Route::get('/{list_id}/delete/{email}', 'SubscriberController@destroy');
 
     Route::get('/{list_id}/{email}/edit', 'SubscriberController@edit');
     Route::get('/{list_id}/create', 'SubscriberController@create');
