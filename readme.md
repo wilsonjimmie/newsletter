@@ -1,4 +1,4 @@
-# Newsletter API connection
+# Newsletter API Documentation
 
 API routes:
 ```
