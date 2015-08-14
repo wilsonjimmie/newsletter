@@ -2,7 +2,7 @@
 
 namespace WilsonCreative\Newsletter\Http\Controllers;
 
-use WilsonCreative\NewsLetter\Contracts\SubscriberRepositoryInterface;
+use WilsonCreative\Newsletter\Contracts\SubscriberRepositoryInterface;
 use WilsonCreative\Newsletter\Http\Controllers\Controller as BaseController;
 use Illuminate\Http\Request;
 

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace WilsonCreative\Newsletter\NewsLetter\Helpers;
+namespace WilsonCreative\Newsletter\Helpers;
 
 
 use Guzzle\Http\Client;

@@ -5,6 +5,13 @@ namespace WilsonCreative\Newsletter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
 
+use WilsonCreative\Newsletter\Contracts\SubscriberRepositoryInterface;
+use WilsonCreative\Newsletter\Contracts\MailinglistRepositoryInterface;
+use WilsonCreative\Newsletter\Contracts\NewsletterRepositoryInterface;
+use WilsonCreative\Newsletter\Repos\Subscriber\MailchimpSubscriber;
+use WilsonCreative\Newsletter\Repos\Mailinglist\MailchimpMailinglist;
+use WilsonCreative\Newsletter\Repos\Newsletter\MailchimpNewsletter;
+
 class NewsletterServiceProvider extends ServiceProvider
 {
 
@@ -46,5 +53,20 @@ class NewsletterServiceProvider extends ServiceProvider
         $this->app->bind('newsletter', function($app) {
             return new Newsletter($app);
         });
+
+        $this->app->bind(
+            SubscriberRepositoryInterface::class,
+            MailchimpSubscriber::class
+        );
+
+        $this->app->bind(
+            NewsletterRepositoryInterface::class,
+            MailchimpNewsletter::class
+        );
+
+        $this->app->bind(
+            MailinglistRepositoryInterface::class,
+            MailchimpMailinglist::class
+        );
     }
 }
