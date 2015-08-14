@@ -14,25 +14,23 @@ WilsonCreative\Newsletter\NewsletterServiceProvider::class
 
 ### API routes:
 ```
-Get all mailinglists: /list/
-Find mailinglist by ID: /list/find/{id}
-Delete mailinglist by ID: /list/delete/{id}
+GET /list/
+GET /list/find/{list_id}
+DELETE /list/delete/{list_id}
 ```
 
 ```
-Get all newsletters: /newsletter/
-Find newsletter by ID: /newsletter/find/{id}
-Delete newsletter with ID: /newsletter/delete/{id}
+GET /newsletter/
+GET /newsletter/find/{newsletter_id}
+DELETE /newsletter/delete/{newsletter_id}
 ```
 
-POST-data example:
-Array(
-    'list_id' => {list_id},
-    'email' => {email}
-)
 ```
-Subscribe (POST-data): /subscriber/add
-Get all subscribers in list: /subscriber/{list_id}
-Get subscriber in list by email: /subscriber/{list_id}/find/{email}
-Delete subscriber in list by email: /subscriber/{list_id}/delete/{email}
+POST /subscriber/add
+GET /subscriber/{list_id}
+GET /subscriber/{list_id}/find/{subscriber_email}
+DELETE /subscriber/{list_id}/delete/{subscriber_email}
 ```
+
+Subscribe POST-data example:
+```Array('list_id' => {list_id}, 'email' => {subscriber_email} )```
