@@ -25,7 +25,8 @@ class NewsletterServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/config/newsletter.php' => config_path('newsletter.php'),
-        ]);
+        ], 'config');
+
     }
 
     public function setupRoutes(Router $router)
@@ -54,19 +55,24 @@ class NewsletterServiceProvider extends ServiceProvider
             return new Newsletter($app);
         });
 
+        $getProvider = config('newsletter.provider');
+        $provider = config('newsletter.providers.' . $getProvider);
+
+        dd($provider);
+
         $this->app->bind(
             SubscriberRepositoryInterface::class,
-            MailchimpSubscriber::class
+            $provider['SubscriberRepo']
         );
 
         $this->app->bind(
             NewsletterRepositoryInterface::class,
-            MailchimpNewsletter::class
+            $provider['NewsletterRepo']
         );
 
         $this->app->bind(
             MailinglistRepositoryInterface::class,
-            MailchimpMailinglist::class
+            $provider['MailinglistRepo']
         );
     }
 }

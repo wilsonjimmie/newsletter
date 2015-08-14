@@ -10,5 +10,10 @@
             "email": "jimmie@wilsoncreative.se",
             "role": "Developer"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "WilsonCreative\\Newsletter": "src/"
+        }
+    }
 }
