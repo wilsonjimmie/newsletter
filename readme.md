@@ -33,4 +33,6 @@ DELETE /subscriber/{list_id}/delete/{subscriber_email}
 ```
 
 Subscribe POST-data example:
-```Array('list_id' => {list_id}, 'email' => {subscriber_email} )```
+```
+Array('list_id' => {list_id}, 'email' => {subscriber_email} )
+```
