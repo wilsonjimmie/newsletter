@@ -13,6 +13,11 @@ Find newsletter by ID: /newsletter/find/{id}
 Delete newsletter with ID: /newsletter/delete/{id}
 ```
 
+POST-data example:
+Array(
+    'list_id' => {list_id},
+    'email' => {email}
+)
 ```
 Subscribe (POST-data): /subscriber/add
 Get all subscribers in list: /subscriber/{list_id}
