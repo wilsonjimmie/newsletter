@@ -1,6 +1,18 @@
-# Newsletter API Documentation
+# Newsletter API for Laravel
 
-API routes:
+## Installing with composer
+```
+$ composer require wilsoncreative/newsletter
+```
+
+Then open your ```app/config/app.php``` and add the following into your providers array.
+```
+WilsonCreative\Newsletter\NewsletterServiceProvider::class
+```
+
+## Newsletter API Documentation
+
+### API routes:
 ```
 Get all mailinglists: /list/
 Find mailinglist by ID: /list/find/{id}
