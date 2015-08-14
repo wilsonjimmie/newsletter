@@ -1,0 +1,14 @@
+{
+    "name": "wilsoncreative/newsletter",
+    "description": "A newsletter API for Apsis and Mailchimp from Wilson Creative",
+    "require": {
+        "guzzle/guzzle": "^3.9"
+    },
+    "authors": [
+        {
+            "name": "Jimmie Johansson",
+            "email": "jimmie@wilsoncreative.se",
+            "role": "Developer"
+        }
+    ]
+}
